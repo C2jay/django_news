@@ -52,3 +52,14 @@ a {
 a, p {
     font-family: monospace;
 }
+
+.form{
+    display: flex;
+    justify-content: center;
+    background-color: lavender;
+}
+
+#box-size{
+    width: 60%;
+    height: 400px;
+}
