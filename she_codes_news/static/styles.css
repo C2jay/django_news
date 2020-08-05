@@ -53,13 +53,34 @@ a, p {
     font-family: monospace;
 }
 
-.form{
-    display: flex;
-    justify-content: center;
+form{
+    display:flex;
+    flex-direction: column;
+    max-width: 70%;
+    margin: auto;
     background-color: lavender;
+}
+
+form p{
+    display: flex;
+}
+
+form label{
+    flex-basis: 20%;
+}
+
+
+form p input, form p textarea{
+    flex-basis: 80%;
+}
+
+
+#id_pub_date_0, #id_pub_date_1{
+    flex-basis: 40%;
 }
 
 #box-size{
     width: 60%;
     height: 400px;
 }
+

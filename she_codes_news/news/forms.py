@@ -1,30 +1,22 @@
 from django import forms
-from django.forms import ModelForm
+from django.forms import ModelForm, SplitDateTimeField, SplitDateTimeWidget
 from .models import NewsStory
 
 class StoryForm(ModelForm):
+    pub_date = SplitDateTimeField(
+        widget=SplitDateTimeWidget(
+            date_attrs={'type': 'date'},
+            time_attrs={'type': 'time'},
+        )
+    )
     class Meta:
         model = NewsStory
-        fields = ['title', 'author', 'pub_date', 'image', 'content']
+        fields = ['title', 'pub_date', 'image', 'content']
         widgets = {
-            'pub_date': forms.DateInput(
-                format=('%m/%d/%Y'),
-                attrs={
-                    'class': 'form',
-                    'placeholder': 'Select a date',
-                    'type': 'date',
-                }
-            ),
             'title': forms.TextInput(
                 attrs={
                     'class': 'form',
                     'placeholder': 'Article Title',
-                }
-            ),
-            'author': forms.TextInput(
-                attrs={
-                    'class': 'form',
-                    'placeholder': 'Author Name'
                 }
             ),
             'content': forms.Textarea(
@@ -35,6 +27,10 @@ class StoryForm(ModelForm):
                 }
             ),
             'image':forms.URLInput(
+                attrs={
+                    'class': 'form',
+                    'placeholder': 'Enter image URL here'
+                }
             ),
         }
 
