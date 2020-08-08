@@ -8,7 +8,9 @@ class NewsStory(models.Model):
     image = models.CharField(max_length=200)
     author = models.ForeignKey(
         get_user_model(),
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name = "stories",
     )
 
-
+    def __str__(self):
+        return str(self.title)
