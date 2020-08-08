@@ -3,7 +3,7 @@ from django.views.generic.edit import CreateView
 from django.views import generic
 from .models import CustomUser
 from .forms import CustomUserCreationForm
-
+from django.http import HttpResponse
 # Create your views here.
 
 class CreateAccountView(CreateView):
@@ -11,4 +11,7 @@ class CreateAccountView(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'users/createAccount.html'
 
-class UserProfileView(DetailView):
+#     return HttpResponse('<h1>User Profile</h1>')
+
+class UserProfileView(generic.TemplateView):
+    template_name = 'users/profile.html'
