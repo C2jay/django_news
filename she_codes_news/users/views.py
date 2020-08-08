@@ -14,9 +14,6 @@ class CreateAccountView(CreateView):
 
 #     return HttpResponse('<h1>User Profile</h1>')
 
-class UserProfileView(generic.TemplateView):
-    template_name = 'users/profile.html'
-
 
 class AuthorView(generic.DetailView):
     model = CustomUser    
