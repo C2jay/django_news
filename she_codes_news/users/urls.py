@@ -7,5 +7,5 @@ urlpatterns = [
     path('create-account/', views.CreateAccountView.as_view(), name='createAccount'),
     path('author/<int:pk>/', views.AuthorView.as_view(), name='author-detail'),
     path('author/<int:pk>/edit/', views.UpdateProfileView.as_view(), name='update-profile'),
-    path('author/<int:pk>/change-password/', views.change_password, name='change_password'),
+    path('author/<int:pk>/change-password/', views.change_password, name='change-password'),
 ]
