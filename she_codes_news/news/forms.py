@@ -7,11 +7,15 @@ class StoryForm(ModelForm):
         widget=SplitDateTimeWidget(
             date_attrs={'type': 'date'},
             time_attrs={'type': 'time'},
-        )
+        ),
+        label='Publication Date'
     )
+
     class Meta:
         model = NewsStory
         fields = ['title', 'pub_date', 'image', 'content']
+        labels = {'image':'Image URL'}
+
         widgets = {
             'title': forms.TextInput(
                 attrs={
