@@ -84,3 +84,9 @@
     margin: 0 0 10px 10px;
     width: 50%;
 }
+
+.profileimg{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}

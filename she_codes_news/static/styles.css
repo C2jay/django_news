@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
 
+html{
+    font-family: monospace;
+}
+
 body {
     background-color: rgb(240, 239, 239);
 }

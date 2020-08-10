@@ -10,7 +10,11 @@
 <div class="container">
     <p>Username: {{ object.username }}</p>
     <p>Email: {{ object.email }}</p>
+    <img class="profileimg" src="{{object.profileimg.url}}" alt="Profile image">
+    <h3>About {{ object.username }}</h3>
+    <p>{{object.bio}}</p>
 </div>
+
 
 <div class="container">
     {% if object %}
