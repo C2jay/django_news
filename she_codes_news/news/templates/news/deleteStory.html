@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>You are about to delete this story...are you sure?</p>
+
+
+<form action="" method="post">
+    {% csrf_token %}
+    <p>{{object.title}}</p>
+    <br>
+    <p>{{object.content}}</p>
+    <input type="submit" value="submit">
+</form>
+
+<a href="{% url 'news:index' %}">Return To Home</a>
+
+
+{% endblock %}

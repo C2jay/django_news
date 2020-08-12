@@ -2,7 +2,7 @@ from django.views import generic
 from django.urls import reverse_lazy
 from .models import NewsStory
 from .forms import StoryForm
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 class AddStoryView(LoginRequiredMixin, generic.CreateView):
     login_url = '/users/login/'
@@ -30,7 +30,7 @@ class StoryView(generic.DetailView):
     template_name = 'news/story.html'
     context_object_name = 'story'
 
-class UpdateStoryView(LoginRequiredMixin, generic.UpdateView):
+class UpdateStoryView(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
     login_url = '/users/login/'
     form_class = StoryForm
     context_object_name = 'storyForm'
@@ -42,3 +42,25 @@ class UpdateStoryView(LoginRequiredMixin, generic.UpdateView):
         success_url = reverse_lazy('news:story', kwargs={'pk':
         story_id})
         return success_url
+
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
+
+
+class DeleteStoryView(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
+    login_url = '/users/login/'
+    form_class = StoryForm
+    context_object_name = 'storyForm'
+    model = NewsStory
+    template_name = 'news/deleteStory.html'
+    
+    def get_success_url(self):
+        """ get the redirect prior to delete"""
+        author_id = self.get_object().author.pk
+        success_url = reverse_lazy('users:author-detail', kwargs={'pk':author_id})
+        return success_url
+
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
