@@ -5,7 +5,7 @@ html{
 }
 
 body {
-    background-color: rgb(240, 239, 239);
+    background-color: #FEF5E7;
 }
 
 header {
@@ -16,11 +16,12 @@ header {
 }
 
 img {
-    filter: grayscale(100%);
+
 }
 
 h1 {
     font-family: 'Montserrat Subrayada', sans-serif;
+    color: #145A32;
     text-decoration: none;
     font-size: 4rem;
     margin: 0;
@@ -28,6 +29,7 @@ h1 {
 
 h2 {
    font-family: 'Montserrat Subrayada', sans-serif; 
+   color: #145A32;
 }
 
 h3 {
@@ -51,6 +53,7 @@ a {
     margin: 2px;
     text-decoration: none;
     color: #000;
+    ;
 }
 
 a, p {
