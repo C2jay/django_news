@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm, SplitDateTimeField, SplitDateTimeWidget
-from .models import NewsStory
+from .models import NewsStory, Comment
 
 class StoryForm(ModelForm):
     pub_date = SplitDateTimeField(
@@ -38,8 +38,7 @@ class StoryForm(ModelForm):
             ),
         }
 
-
-# class CommentForm(forms.ModelForm):
-#         class Meta:
-#             model = Comment
-#             fields = ('name', 'email', 'body')
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('name', 'email', 'body')
