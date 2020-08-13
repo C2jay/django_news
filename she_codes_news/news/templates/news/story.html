@@ -15,6 +15,9 @@
     </div>
 </div>
 
-<a href="{% url 'news:index'%}">Return</a>
+<div>
+<a href="{% url 'news:index'%}">Home</a>
+<a href="{% url 'users:author-detail' story.author.id %}">View Author Page</a>
+</div>
 
 {% endblock%}

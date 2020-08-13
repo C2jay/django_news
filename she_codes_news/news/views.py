@@ -37,13 +37,11 @@ class UpdateStoryView(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateVie
     context_object_name = 'storyForm'
     model = NewsStory
     template_name = 'news/updateStory.html'
-    
     def get_success_url(self):
-        story_id= self.kwargs['pk']
-        success_url = reverse_lazy('news:story', kwargs={'pk':
-        story_id})
+        """ get the redirect prior to delete"""
+        author_id = self.get_object().author.pk
+        success_url = reverse_lazy('users:author-detail', kwargs={'pk':author_id})
         return success_url
-
     def test_func(self):
         obj = self.get_object()
         return obj.author == self.request.user
