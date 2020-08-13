@@ -13,6 +13,12 @@
     <img class="profileimg" src="{{object.profileimg.url}}" alt="Profile image">
     <h3>About {{ object.username }}</h3>
     <p>{{object.bio}}</p>
+    
+    {% if request.user.id == user.id %}
+    <a href="{% url 'users:update-profile' user.id %}">Edit Profile</a>
+    <a href="{% url 'users:change-password' user.id %}">Change Password</a>
+    {% endif %}
+
 </div>
 
 
@@ -28,6 +34,12 @@
                     <h4><a href="{% url 'users:author-detail' story.author.id %}">
                         {{ story.author }}</a></h4>
                     <h4>{{ story.pub_date }}</h4>
+                </div>
+                <div>
+                {% if request.user.id == story.author.id %}
+                <a href="{% url 'news:editStory' story.id %}">Edit this Story</a>
+                <a href="{% url 'news:deleteStory' story.id %}">Delete this Story</a>
+                {% endif %}
                 </div>
             </a>
         </div>    
