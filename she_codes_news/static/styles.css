@@ -1,35 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap');
+
 
 html{
-    font-family: monospace;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
-    background-color: #FEF5E7;
+    background-color: whitesmoke;
 }
 
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px dotted #000;
 }
 
-img {
-
-}
 
 h1 {
-    font-family: 'Montserrat Subrayada', sans-serif;
+    font-family: 'News Cycle', sans-serif;
     color: #145A32;
-    text-decoration: none;
     font-size: 4rem;
-    margin: 0;
+    margin: 10px;
 }
 
 h2 {
-   font-family: 'Montserrat Subrayada', sans-serif; 
-   color: #145A32;
+    font-family: 'Open Sans', sans-serif;
+    color: #145A32;
 }
 
 h3 {
@@ -57,15 +55,16 @@ a {
 }
 
 a, p {
-    font-family: monospace;
+    font-family: 'Open Sans', sans-serif;
 }
 
 form{
     display:flex;
     flex-direction: column;
-    max-width: 70%;
+    max-width: 80%;
     margin: auto;
-    background-color: lavender;
+    background-color: #145A32;
+    padding: 2em;
 }
 
 form p{
@@ -78,12 +77,12 @@ form label{
 
 
 form p input, form p textarea{
-    flex-basis: 80%;
+    flex-basis: 90%;
 }
 
 
 #id_pub_date_0, #id_pub_date_1{
-    flex-basis: 40%;
+    flex-basis: 45%;
 }
 
 #box-size{

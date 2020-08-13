@@ -6,7 +6,6 @@
 
 .story-card img {
     width: 100%;
-    height: 300px;
     object-fit: cover;
 }
 
@@ -64,10 +63,17 @@
     margin-right: 5px;
 }
 
-#all-stories {
+/* #all-stories {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column wrap;
     justify-content: space-between;
+} */
+
+#all-stories {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1px 1px;
+    max-height: 100px;
 }
 
 #all-stories .story-card {
