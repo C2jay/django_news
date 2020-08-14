@@ -19,15 +19,17 @@
         </div>
     </div> 
 
-        <div id="bio">
-            <h3>About {{ object.username }}</h3>
-            <p>{{ object.bio }}</p>
-        </div>
+    <div id="bio">
+        <h2>About {{ object.username }}</h2>
+        <p>{{ object.bio }}</p>
+    </div>
     
+    <div>
         {% if request.user.id == object.id %}
-        <a href="{% url 'users:update-profile' user.id %}">Edit Profile</a>
-        <a href="{% url 'users:change-password' user.id %}">Change Password</a>
+        <a  id="edit-profile-buttons" href="{% url 'users:update-profile' user.id %}">Edit Profile</a>
+        <a  id="edit-profile-buttons" href="{% url 'users:change-password' user.id %}">Change Password</a>
         {% endif %}
+    </div>
     
 </div>
 
