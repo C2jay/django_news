@@ -38,7 +38,26 @@ class StoryForm(ModelForm):
             ),
         }
 
-class CommentForm(forms.ModelForm):
-    class Meta:
-        model = Comment
-        fields = ('name', 'email', 'body')
+# class CommentForm(forms.ModelForm):
+#     # pub_date = SplitDateTimeField(
+#     #         widget=SplitDateTimeWidget(
+#     #         date_attrs={'type': 'date'},
+#     #         time_attrs={'type': 'time'},
+#     #     ),
+#     #     label='Publication Date',
+#     # )
+
+#     class Meta:
+#         model = Comment
+#         fields = ['body']
+
+#         widgets = {
+
+#             'body': forms.Textarea(
+#                 attrs={
+#                     'class': 'form',
+#                     'id': 'box-size',
+#                     'placeholder': 'Comment Here'
+#                 }
+#             ),
+#         }

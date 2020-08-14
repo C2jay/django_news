@@ -6,7 +6,6 @@
 {% endblock %}
 
 {% block content %}
-
     <h2>Latest News</h2>
 
     <div id="latest-stories">
@@ -19,6 +18,8 @@
         {% endif %}
     </div>
 
+    <h2>All News</h2>
+    
     <div id="all-stories">
         {% if all_stories %}
             {% for story in all_stories %}

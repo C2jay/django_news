@@ -9,7 +9,7 @@ from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 from django.shortcuts import render, redirect
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 # Create your views here.
 
@@ -36,7 +36,7 @@ class UpdateProfileView(LoginRequiredMixin, generic.UpdateView):
         success_url = reverse_lazy('users:author-detail', kwargs={'pk':
         author_id})
         return success_url
-
+    
 
 def change_password(request, pk):
     if request.method == 'POST':

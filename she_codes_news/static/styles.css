@@ -3,7 +3,7 @@
 
 
 html{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 body {
@@ -19,15 +19,14 @@ header {
 
 
 h1 {
-    font-family: 'News Cycle', sans-serif;
-    color: #145A32;
+    color: #6b469a;
     font-size: 4rem;
     margin: 10px;
 }
 
 h2 {
-    font-family: 'Open Sans', sans-serif;
-    color: #145A32;
+    font-family: 'Raleway', sans-serif;
+    color: #6b469a;
 }
 
 h3 {
@@ -47,15 +46,16 @@ nav {
     align-items: flex-end;
 }
 
+#nav-bar a:hover{
+    text-decoration: underline;
+    color: #ff8f73;
+}
+
 a {
     margin: 2px;
     text-decoration: none;
-    color: #000;
+    color: #6b4696;
     ;
-}
-
-a, p {
-    font-family: 'Open Sans', sans-serif;
 }
 
 form{
@@ -63,7 +63,7 @@ form{
     flex-direction: column;
     max-width: 80%;
     margin: auto;
-    background-color: #145A32;
+    background-color: #6b469a;
     padding: 2em;
 }
 

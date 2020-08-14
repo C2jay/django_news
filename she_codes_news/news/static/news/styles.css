@@ -7,6 +7,7 @@
 .story-card img {
     width: 100%;
     object-fit: cover;
+    max-height: 500px;
 }
 
 #latest-stories {
@@ -15,11 +16,12 @@
     grid-template-rows: 1fr 1fr 1fr;
     gap: 1px 1px;
     grid-template-areas: "left-1 right-1" "left-1 right-2" "left-1 right-3";
-    max-height: 500px;
+    max-height: 900px;
 }
 
-#story-card-1 {
+#story-card-1{
     grid-area: left-1;
+    max-height: 800px;
 }
 
 #story-card-2 {
@@ -47,6 +49,7 @@
 #story-card-3 .story-card-text h3,
 #story-card-4 .story-card-text h3 {
     font-size: 16px;
+    max-height: 0px;
 }
 
 #story-card-2 .story-card-text h4,
@@ -58,16 +61,11 @@
 #story-card-2 img,
 #story-card-3 img,
 #story-card-4 img {
+    align-items: flex-end;
     width: 33%;
     height: 100%;
     margin-right: 5px;
 }
-
-/* #all-stories {
-    display: flex;
-    flex-direction: column wrap;
-    justify-content: space-between;
-} */
 
 #all-stories {
     display: grid;
@@ -91,8 +89,31 @@
     width: 50%;
 }
 
+#profileimg-container{
+    display: flex;
+    align-self: flex-start;
+}
+
 .profileimg{
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
+}
+
+#profile-container{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+#profiledeets{
+    display: flex;
+    flex-direction: column;
+}
+
+#bio{
+    display: flex;
+    justify-content: flex-end;
+
 }

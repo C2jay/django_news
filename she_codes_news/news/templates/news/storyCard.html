@@ -1,6 +1,6 @@
 <div class="story-card" id="story-card-{{ position }}">
     <a href="{{ story.slug }}">
-        <img src="{{story.image}}">
+        <div class="story-card-image"><img src="{{story.image}}"></div>
         <div class="story-card-text">
             <h3>{{ story.title }}</h3>
             <h4><a href="{% url 'users:author-detail' story.author.id %}">

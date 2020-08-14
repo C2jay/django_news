@@ -8,23 +8,33 @@
 {% block content %}
 
 <div class="container">
-    <p>Username: {{ object.username }}</p>
-    <p>Email: {{ object.email }}</p>
-    <img class="profileimg" src="{{object.profileimg.url}}" alt="Profile image">
-    <h3>About {{ object.username }}</h3>
-    <p>{{object.bio}}</p>
-    
-    {% if request.user.id == user.id %}
-    <a href="{% url 'users:update-profile' user.id %}">Edit Profile</a>
-    <a href="{% url 'users:change-password' user.id %}">Change Password</a>
-    {% endif %}
+    <div id="profile-container">
+        <div id="profileimg-container">
+            <img class="profileimg" src="{{object.profileimg.url}}" alt="Profile image">
+        </div>
+        
+        <div id="profiledeets">
+            <p>Username: {{ object.username }}</p>
+            <p>Email: {{ object.email }}</p>
+        </div>
+    </div> 
 
+        <div id="bio">
+            <h3>About {{ object.username }}</h3>
+            <p>{{ object.bio }}</p>
+        </div>
+    
+        {% if request.user.id == object.id %}
+        <a href="{% url 'users:update-profile' user.id %}">Edit Profile</a>
+        <a href="{% url 'users:change-password' user.id %}">Change Password</a>
+        {% endif %}
+    
 </div>
 
 
 <div class="container">
+    <h2>{{ object.get_full_name|default:object.username }}'s Stories</h2>
     {% if object %}
-        <h2>{{ object.get_full_name|default:object.username }}'s Stories</h2>
         {% for story in object.stories.all %}
         <div class="story-card" id="story-card-{{ position }}">
             <a href="{% url 'news:story' story.slug %}">
