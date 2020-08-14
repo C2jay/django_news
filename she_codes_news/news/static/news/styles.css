@@ -1,3 +1,8 @@
+#button-wrapper{
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+}
 .story-card {
     margin: 2px;
     border: 2px solid  #6b469a;

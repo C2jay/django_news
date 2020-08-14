@@ -6,6 +6,12 @@
 {% endblock %}
 
 {% block content %}
+
+<div id="button-wrapper">
+    <a id="edit-buttons" href="{% url 'news:index'%}">Home</a>
+    <a id = "edit-buttons" href="{% url 'users:author-detail' story.author.id %}">View Author Page</a>
+    </div>
+
 <div id="story-wrapper">
     <h2>{{ story.title }}</h2>
     <h4>{{ story.author }}</h4>
@@ -15,10 +21,7 @@
     </div>
 </div>
 
-<div>
-<a href="{% url 'news:index'%}">Home</a>
-<a href="{% url 'users:author-detail' story.author.id %}">View Author Page</a>
-</div>
+
 
 
 

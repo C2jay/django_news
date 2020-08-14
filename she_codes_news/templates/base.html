@@ -17,17 +17,24 @@
     </head>
 
     <body>
-        <header>
-            <div id="header-text">
-                <a id="header-link" href="{% url 'news:index' %}">
-                    <h1>She {Codes} News</h1>
-                </a>
-            </div>
-            {% include './nav.html' %}
-            <!-- include nav here -->
-        </header>
+        <div id="page-container">
+            <div id="content-wrap">
+                <header>
+                    <div id="header-text">
+                        <a id="header-link" href="{% url 'news:index' %}">
+                            <h1>She {Codes} News</h1>
+                        </a>
+                    </div>
+                    {% include './nav.html' %}
+                    <!-- include nav here -->
+                </header>
 
-        <!-- content blocks here -->
-        {% block content %}{% endblock %}
+                <!-- content blocks here -->
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+
     </body>
+
+
 </html>

@@ -3,7 +3,16 @@
 
 
 html{
+    height: 100%;
     font-family: 'Raleway', sans-serif;
+}
+#page-container{
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    margin-bottom: -2.5rem;
 }
 
 body {
@@ -92,4 +101,3 @@ form p input, form p textarea{
     width: 60%;
     height: 400px;
 }
-
