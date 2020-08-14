@@ -15,7 +15,8 @@ header {
     align-items: center;
     justify-content: space-between;
     height: 200px;
-    border-bottom: 3px solid #ff8f73;
+    border-bottom: 15px solid #e0a423;
+    background-color: whitesmoke;
 }
 
 
@@ -49,7 +50,7 @@ nav {
 
 #nav-bar a:hover{
     text-decoration: underline;
-    color: #ff8f73;
+    color: #e0a423;
 }
 
 a {

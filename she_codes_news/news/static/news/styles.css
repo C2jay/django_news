@@ -1,7 +1,9 @@
 .story-card {
     margin: 2px;
-    border: 1px solid  #145A32;
+    border: 2px solid  #6b469a;
     padding: 5px;
+    box-shadow: 2px 2px 2px #6b469a;
+    background-color: whitesmoke;
 }
 
 .story-card img {
@@ -118,9 +120,10 @@
     flex-direction: column;
 }
 
-#edit-profile-buttons{
-    border: 1px dashed black;
+#edit-buttons{
+    border: 1px dashed #6b469a;
     margin: 5px;
-    padding: 5px;
-    background-color:#ff8f73;
+    padding: 2px;
+    font-size: 0.8em;
+    background-color:#e0a423;
 }

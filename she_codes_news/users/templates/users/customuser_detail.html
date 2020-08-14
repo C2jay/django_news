@@ -26,8 +26,8 @@
     
     <div>
         {% if request.user.id == object.id %}
-        <a  id="edit-profile-buttons" href="{% url 'users:update-profile' user.id %}">Edit Profile</a>
-        <a  id="edit-profile-buttons" href="{% url 'users:change-password' user.id %}">Change Password</a>
+        <a  id="edit-buttons" href="{% url 'users:update-profile' user.id %}">Edit Profile</a>
+        <a  id="edit-buttons" href="{% url 'users:change-password' user.id %}">Change Password</a>
         {% endif %}
     </div>
     
@@ -49,8 +49,8 @@
                 </div>
                 <div>
                 {% if request.user.id == story.author.id %}
-                <a href="{% url 'news:editStory' story.id %}">Edit this Story</a>
-                <a href="{% url 'news:deleteStory' story.id %}">Delete this Story</a>
+                <a id="edit-buttons" href="{% url 'news:editStory' story.id %}">Edit this Story</a>
+                <a id="edit-buttons" href="{% url 'news:deleteStory' story.id %}">Delete this Story</a>
                 {% endif %}
                 </div>
             </a>
